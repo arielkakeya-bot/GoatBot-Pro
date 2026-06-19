@@ -255,7 +255,7 @@ async function sendListPage(api, threadID, senderID, type, page, limit = 10) {
       msg += `╰────────────◊\n`;
       msg += ` ✰ Upload : ${new Date(cmd.uploadDate || Date.now()).toDateString()}\n\n`;
     });
-    if (totalPages > 1) msg += `Reply "page <number>" to navigate.`;
+    if (totalPages > 1) msg += `Reply "page <number>" or react to go next page.`;
 
     const sent = await api.sendMessage(msg.trim(), threadID);
     if (totalPages > 1) {
@@ -353,7 +353,7 @@ module.exports = {
   config: {
     name: "goatstore",
     aliases: ["gs", "cmdstore", "commandstore"],
-    version: "5.0.0",
+    version: "6.0.0",
     author: "rX & EryXenX",
     countDown: 3,
     role: 2,
